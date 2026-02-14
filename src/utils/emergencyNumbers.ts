@@ -32,12 +32,12 @@ export const detectCountryFromCoordinates = async (
       `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`
     );
     const data = await response.json();
-    return data.countryCode || 'US';
+    return data.countryCode || 'INTL';
   } catch {
-    return 'US';
+    return 'INTL';
   }
 };
 
 export const getEmergencyNumber = (countryCode: string): EmergencyNumber => {
-  return emergencyNumbers[countryCode] || emergencyNumbers['US'];
+  return emergencyNumbers[countryCode] || { country: 'International', code: 'INTL', number: '112' };
 };

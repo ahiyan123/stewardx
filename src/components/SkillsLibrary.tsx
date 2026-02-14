@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Book, X, ExternalLink } from 'lucide-react';
 import { survivalGuides } from '../data/survivalGuides';
+import { useLanguage } from '../contexts/LanguageContext';
 import { theme } from '../theme';
 import { SurvivalGuide, AffiliateProduct } from '../types';
 import CarbonAds from './CarbonAds';
@@ -11,6 +12,7 @@ interface SkillsLibraryProps {
 
 export default function SkillsLibrary({ alertActive }: SkillsLibraryProps) {
   const [selectedGuide, setSelectedGuide] = useState<SurvivalGuide | null>(null);
+  const { t } = useLanguage();
 
   return (
     <div
@@ -24,7 +26,7 @@ export default function SkillsLibrary({ alertActive }: SkillsLibraryProps) {
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
         <Book size={20} color={theme.colors.gold} />
         <span style={{ color: theme.colors.gold, fontSize: '0.875rem', fontWeight: 'bold' }}>
-          BANQUET OF SKILLS
+          {t.skills.title}
         </span>
       </div>
 
@@ -125,7 +127,7 @@ export default function SkillsLibrary({ alertActive }: SkillsLibraryProps) {
                 letterSpacing: '0.1em',
               }}
             >
-              REQUIRED TOOLS
+              {t.skills.requiredTools}
             </div>
             <div style={{ display: 'grid', gap: '0.75rem' }}>
               {selectedGuide.requiredTools.map((product: AffiliateProduct) => (
@@ -179,7 +181,7 @@ export default function SkillsLibrary({ alertActive }: SkillsLibraryProps) {
                           cursor: 'pointer',
                         }}
                       >
-                        EQUIP HEARTH
+                        {t.skills.equipButton}
                         <ExternalLink size={14} />
                       </a>
                     </div>
@@ -191,7 +193,7 @@ export default function SkillsLibrary({ alertActive }: SkillsLibraryProps) {
 
           <div style={{ marginTop: '1rem' }}>
             <div style={{ color: theme.colors.lightGray, fontSize: '0.625rem', marginBottom: '0.5rem', letterSpacing: '0.05em' }}>
-              SOVEREIGN AD PLACEMENT
+              {t.skills.adPlacement}
             </div>
             <CarbonAds alertActive={alertActive} />
           </div>

@@ -3,6 +3,7 @@ import { Activity, AlertTriangle } from 'lucide-react';
 import { Location, SeismicEvent } from '../types';
 import { calculateDistance } from '../utils/gps';
 import { initAudio, playAlarm, stopAlarmPermanently } from '../utils/alarm';
+import { useLanguage } from '../contexts/LanguageContext';
 import { theme } from '../theme';
 
 interface SeismicMonitorProps {
@@ -15,6 +16,7 @@ export default function SeismicMonitor({ location, onAlert }: SeismicMonitorProp
   const [loading, setLoading] = useState(false);
   const [alertActive, setAlertActive] = useState(false);
   const [lastCheck, setLastCheck] = useState<Date | null>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     initAudio();
@@ -98,13 +100,13 @@ export default function SeismicMonitor({ location, onAlert }: SeismicMonitorProp
             fontWeight: 'bold',
           }}
         >
-          SEISMIC SENTINEL
+          {t.seismic.title}
         </span>
       </div>
 
       {loading && !lastCheck && (
         <div style={{ color: theme.colors.lightGray, fontSize: '0.75rem' }}>
-          SCANNING USGS DATABASE...
+          {t.seismic.scanning}
         </div>
       )}
 
@@ -134,7 +136,7 @@ export default function SeismicMonitor({ location, onAlert }: SeismicMonitorProp
                 letterSpacing: '0.1em',
               }}
             >
-              SEISMIC ALERT
+              {t.seismic.alert}
             </span>
           </div>
           {events.map((event, idx) => (
@@ -166,23 +168,23 @@ export default function SeismicMonitor({ location, onAlert }: SeismicMonitorProp
               marginTop: '0.5rem',
             }}
           >
-            ACKNOWLEDGE ALERT
+            {t.seismic.acknowledge}
           </button>
         </div>
       )}
 
       {!alertActive && events.length === 0 && lastCheck && (
         <div style={{ color: theme.colors.white, fontSize: '0.75rem' }}>
-          <div>STATUS: ALL CLEAR</div>
+          <div>{t.seismic.status}</div>
           <div style={{ color: theme.colors.lightGray, marginTop: '0.25rem' }}>
-            No M4.5+ events within 100km
+            {t.seismic.noEvents}
           </div>
         </div>
       )}
 
       {lastCheck && (
         <div style={{ color: theme.colors.lightGray, fontSize: '0.625rem', marginTop: '0.5rem' }}>
-          LAST SCAN: {lastCheck.toLocaleTimeString()}
+          {t.seismic.lastScan}: {lastCheck.toLocaleTimeString()}
         </div>
       )}
     </div>

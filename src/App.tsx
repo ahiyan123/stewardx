@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Location } from './types';
 import { theme } from './theme';
+import { useLanguage } from './contexts/LanguageContext';
 import GPSStatus from './components/GPSStatus';
 import SOSDialer from './components/SOSDialer';
 import SeismicMonitor from './components/SeismicMonitor';
@@ -10,6 +11,7 @@ import SkillsLibrary from './components/SkillsLibrary';
 function App() {
   const [location, setLocation] = useState<Location | null>(null);
   const [alertActive, setAlertActive] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div
@@ -39,7 +41,7 @@ function App() {
             textShadow: `0 0 10px ${theme.colors.gold}`,
           }}
         >
-          THE STEWARD
+          {t.header.title}
         </h1>
         <div
           style={{
@@ -49,7 +51,7 @@ function App() {
             fontWeight: 'bold',
           }}
         >
-          CRISIS NAVIGATOR
+          {t.header.subtitle}
         </div>
         <div
           style={{
@@ -59,7 +61,7 @@ function App() {
             letterSpacing: '0.05em',
           }}
         >
-          INDUSTRIAL MIDNIGHT PROTOCOL
+          {t.header.protocol}
         </div>
       </header>
 
@@ -107,7 +109,7 @@ function App() {
             animation: 'marquee 20s linear infinite',
           }}
         >
-          PIONEER DOESN'T KNOW TO REST. EVERYONE ISN'T SAME.
+          {t.footer.motto}
         </div>
         <div
           style={{
@@ -117,7 +119,7 @@ function App() {
             marginTop: '0.5rem',
           }}
         >
-          ALL DATA PROCESSING ON-DEVICE | SOVEREIGN PRIVACY PROTOCOL | NO EXTERNAL TRACKING
+          {t.footer.privacy}
         </div>
       </footer>
     </div>
