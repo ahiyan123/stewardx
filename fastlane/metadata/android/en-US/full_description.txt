@@ -4,15 +4,18 @@ In an era of relentless data harvesting and privacy intrusion, Steward X emerges
 
 Why Steward X?
 We understand that "Everyone isn't same." Mass-market applications are designed to track, profile, and monetize your every move. Steward X is built for the outlier—the pioneer who requires critical urban telemetry without sacrificing their identity.
+\
+Steward X: Your Personal Safety Guardian
 
-🚀 Core Features
-Industrial Midnight Interface: A high-contrast, low-latency UI designed for maximum readability in high-stakes environments. It’s not just a theme; it’s a standard of performance.
+Steward X is a high-performance utility designed to keep you informed about your surroundings. It turns your device into a localized monitoring station for:
 
-Seismic Sentinel (Beta): Experience real-time localized seismic monitoring. Get precision telemetry data regarding environmental shifts directly on your device.
+Seismic Activity: Detects vibrations and environmental shifts using onboard sensors(Magnitude 4.5+ incidents automatically detected).
 
-Zero-Data Footprint (Hardened Privacy): Steward X contains Zero Trackers, Zero Analytics, and Zero Third-party libraries. It is a clean, independent binary.
+Air Quality: Monitors pollution levels (AQI) in your area and convert the AQI score to easily understandable language to keep your lungs safe.
 
-Sovereign Architecture: Distributed via independent channels and open-source under the GNU GPL v2 license, ensuring complete transparency and trust.
+Safety Alerts: Provides awareness regarding local safety data and incidents.
+
+Privacy First: No ads, no trackers, and no data selling. Just pure, open-source protection.
 
 Specification Details
 Framework : Hardened Android Utility
