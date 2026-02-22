@@ -1,6 +1,6 @@
 Steward X: Sovereign Urban Resilience Utility
 The Vision
-In an era of relentless data harvesting and privacy intrusion, Steward X emerges as a fortress for the modern individual. Built upon the proprietary Industrial Midnight Protocol, this utility is designed for those who value digital sovereignty and absolute reliability. We operate under one core principle: "Pioneer doesn't know to rest." While the world settles for mediocrity, Steward X strives for hardened efficiency.
+In an era of relentless data harvesting and privacy intrusion, Steward X emerges as a fortress for the modern individual. Built for FOSS upon the Industrial Midnight Protocol, this utility is designed for those who value digital sovereignty and absolute reliability. We operate under one core principle: "Pioneer doesn't know to rest." While the world settles for mediocrity, Steward X strives for hardened efficiency.
 
 Why Steward X?
 We understand that "Everyone isn't same." Mass-market applications are designed to track, profile, and monetize your every move. Steward X is built for the outlier—the pioneer who requires critical urban telemetry without sacrificing their identity.
