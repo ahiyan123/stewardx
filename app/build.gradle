@@ -8,8 +8,8 @@ android {
         applicationId "com.ahiyan.stewardx"
         minSdk 21
         targetSdk 33
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -24,7 +24,14 @@ android {
     // Everyone isn't same - This app uses a web-core for its unique UI.
     sourceSets {
         main {
-            assets.srcDirs = ['../src']      }
+            assets.srcDirs = ['../src']      
+        }
+    }
+
+    // Izzy's requirement: Disable dependency info tracking
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
     }
 }
 
@@ -33,11 +40,4 @@ dependencies {
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.webkit:webkit:1.6.0'
-}
-
-android {
-    dependenciesInfo {
-        includeInApk = false
-        includeInBundle = false
-    }
 }
