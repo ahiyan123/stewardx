@@ -19,10 +19,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    # গিটহাব নিজেই গ্রেডল সেটআপ করে নেবে, আমাদের আর gradlew ফাইলের দরকার নেই!
+    # এখানে আমরা নির্দিষ্ট করে দিচ্ছি যে আমরা Gradle 8.0 ব্যবহার করতে চাই
     - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v3
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.0' 
 
-    # সরাসরি কমান্ড রান করা
     - name: Build with Gradle
       run: gradle assembleRelease
