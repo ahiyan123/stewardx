@@ -27,3 +27,6 @@ jobs:
 
     - name: Build with Gradle
       run: gradle assembleRelease
+      
+    - name: Build with Gradle Scan
+      run: gradle assembleRelease --scan
