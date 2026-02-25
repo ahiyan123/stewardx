@@ -5,7 +5,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.ahiyan.stewardx"
+        applicationId "com.pioneer.stewardx"
         minSdk 21
         targetSdk 33
         versionCode 4
