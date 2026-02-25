@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'host.bolt.stewardx.twa' // আপনার বর্তমান আইডি
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "host.bolt.stewardx.twa"
+        minSdk 21
+        targetSdk 34
+        versionCode 5   // ইজি-র ডিমান্ড অনুযায়ী আপডেট করা
+        versionName "1.4"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true // সাইজ কমানোর জন্য
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+}
