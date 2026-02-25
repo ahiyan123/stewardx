@@ -36,7 +36,7 @@ for %%i in ("%APP_HOME%") do set APP_HOME=%%~fi
 set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m"
 
 @rem Find java.exe
-if cottages "%JAVA_HOME%" == "" goto noJavaHome
+if "%JAVA_HOME%" == "" goto noJavaHome
 
 set JAVA_EXE=%JAVA_HOME%/bin/java.exe
 
