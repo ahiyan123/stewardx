@@ -3,7 +3,7 @@ name: Android CI
 on:
   push:
     branches: [ "main", "master" ]
-    tags: [ "v1.2" ]
+    tags: [ "1.4" ]
 
 jobs:
   build:
