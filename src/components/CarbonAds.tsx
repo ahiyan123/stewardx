@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
 import { theme } from '../theme';
 
 interface CarbonAdsProps {
@@ -7,7 +6,6 @@ interface CarbonAdsProps {
 }
 
 export default function CarbonAds({ alertActive }: CarbonAdsProps) {
-  const { t } = useLanguage();
   useEffect(() => {
     if (!alertActive && window._carbonads === undefined) {
       const script = document.createElement('script');
@@ -38,7 +36,7 @@ export default function CarbonAds({ alertActive }: CarbonAdsProps) {
           letterSpacing: '0.05em',
         }}
       >
-        {t.skills.alertMode}
+        ALERT MODE: ADS DISABLED FOR OPERATIONAL CLARITY
       </div>
     );
   }

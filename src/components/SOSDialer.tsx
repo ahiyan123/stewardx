@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Phone, MapPin } from 'lucide-react';
 import { Location, EmergencyNumber } from '../types';
 import { detectCountryFromCoordinates, getEmergencyNumber } from '../utils/emergencyNumbers';
-import { useLanguage } from '../contexts/LanguageContext';
 import { theme } from '../theme';
 
 interface SOSDialerProps {
@@ -12,7 +11,6 @@ interface SOSDialerProps {
 export default function SOSDialer({ location }: SOSDialerProps) {
   const [emergencyInfo, setEmergencyInfo] = useState<EmergencyNumber | null>(null);
   const [detecting, setDetecting] = useState(false);
-  const { t, detectLanguageFromCountry } = useLanguage();
 
   useEffect(() => {
     if (location) {
@@ -21,11 +19,10 @@ export default function SOSDialer({ location }: SOSDialerProps) {
         .then((countryCode) => {
           const info = getEmergencyNumber(countryCode);
           setEmergencyInfo(info);
-          detectLanguageFromCountry(countryCode);
         })
         .finally(() => setDetecting(false));
     }
-  }, [location, detectLanguageFromCountry]);
+  }, [location]);
 
   const handleSOSCall = () => {
     if (emergencyInfo) {
@@ -52,12 +49,12 @@ export default function SOSDialer({ location }: SOSDialerProps) {
             letterSpacing: '0.1em',
           }}
         >
-          {t.sos.title}
+          GLOBAL SOS DIALER
         </div>
 
         {detecting ? (
           <div style={{ color: theme.colors.lightGray, fontSize: '0.875rem' }}>
-            {t.sos.detecting}
+            DETECTING LOCATION...
           </div>
         ) : emergencyInfo ? (
           <>
@@ -115,12 +112,12 @@ export default function SOSDialer({ location }: SOSDialerProps) {
               }}
             >
               <Phone size={24} />
-              {t.sos.button}
+              INITIATE SOS CALL
             </button>
           </>
         ) : (
           <div style={{ color: theme.colors.lightGray, fontSize: '0.875rem' }}>
-            {t.sos.awaiting}
+            AWAITING GPS SIGNAL
           </div>
         )}
       </div>
